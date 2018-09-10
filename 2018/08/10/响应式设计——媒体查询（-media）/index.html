@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>媒体查询（@media） | JinLing&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前段时间做了一些移动端APP活动页面，对此深有感触，整理这篇笔记希望能时常温故知新^_^ 媒体查询媒体查询是可以更精确的作用于不同媒介类型，是实现响应式布局/自适应的一种很好的方法。随着移动端的普及变得越来越重要。 语法123@media mediatype and|not|only (media feature) &amp;#123;    CSS-Code;&amp;#125; 在使用媒体查询之前，需要设置好">
+<meta name="keywords" content="media,meta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="媒体查询（@media）">
+<meta property="og:url" content="https://zhangjinling1993.github.io/2018/08/10/响应式设计——媒体查询（-media）/index.html">
+<meta property="og:site_name" content="JinLing&#39;s blog">
+<meta property="og:description" content="前段时间做了一些移动端APP活动页面，对此深有感触，整理这篇笔记希望能时常温故知新^_^ 媒体查询媒体查询是可以更精确的作用于不同媒介类型，是实现响应式布局/自适应的一种很好的方法。随着移动端的普及变得越来越重要。 语法123@media mediatype and|not|only (media feature) &amp;#123;    CSS-Code;&amp;#125; 在使用媒体查询之前，需要设置好">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://zhangjinling1993.github.io/2018/08/10/响应式设计——媒体查询（-media）/size.jpg">
+<meta property="og:updated_time" content="2018-09-10T03:44:40.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="媒体查询（@media）">
+<meta name="twitter:description" content="前段时间做了一些移动端APP活动页面，对此深有感触，整理这篇笔记希望能时常温故知新^_^ 媒体查询媒体查询是可以更精确的作用于不同媒介类型，是实现响应式布局/自适应的一种很好的方法。随着移动端的普及变得越来越重要。 语法123@media mediatype and|not|only (media feature) &amp;#123;    CSS-Code;&amp;#125; 在使用媒体查询之前，需要设置好">
+<meta name="twitter:image" content="https://zhangjinling1993.github.io/2018/08/10/响应式设计——媒体查询（-media）/size.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="JinLing&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JinLing&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zhangjinling1993.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-响应式设计——媒体查询（-media）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/10/响应式设计——媒体查询（-media）/" class="article-date">
+  <time datetime="2018-08-10T02:37:12.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验总结/">经验总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      媒体查询（@media）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前段时间做了一些移动端APP活动页面，对此深有感触，整理这篇笔记希望能时常温故知新^_^</p>
+<h4 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h4><p>媒体查询是可以更精确的作用于不同媒介类型，是实现响应式布局/自适应的一种很好的方法。随着移动端的普及变得越来越重要。</p>
+<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="在使用媒体查询之前，需要设置好-lt-meta-标签："><a href="#在使用媒体查询之前，需要设置好-lt-meta-标签：" class="headerlink" title="在使用媒体查询之前，需要设置好&lt;meta>标签："></a>在使用媒体查询之前，需要设置好&lt;meta>标签：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1,minmum-scale=1,maxmum-scale=1,user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Viewport 属性名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>设置layout viewport 的宽度，为一个正整数，使用字符串”width-device”表示设备宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置layout viewport 的高度，这个属性对我们并不重要，很少使用</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>设置页面的初始缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>允许用户的最小缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>允许用户的最大缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>是否允许用户进行缩放，值为”no”或”yes”, no 代表不允许，yes代表允许</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>target-densitydpi(安卓特有)</td>
+<td>值可以为一个数值或 high-dpi 、 medium-dpi、 low-dpi、 device-dpi 这几个字符串中的一个</td>
+</tr>
+</tbody>
+</table>
+<h5 id="media常用方式"><a href="#media常用方式" class="headerlink" title="@media常用方式"></a>@media常用方式</h5><ol>
+<li><p>用min-width时，小的放上面大的在下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (min-width: 768px)&#123; //&gt;=768的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (min-width: 992px)&#123; //&gt;=992的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (min-width: 1200)&#123; //&gt;=1200的设备 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用max-width那么就是大的在上面，小的在下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (max-width: 1199)&#123; //&lt;=1199的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 991px)&#123; //&lt;=991的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 767px)&#123; //&lt;=768的设备 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>混合应用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@media media screen and (min-width:1200px) &#123;&#125;</span><br><span class="line"></span><br><span class="line">@media media screen and (min-width: 960px) and (max-width: 1199px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (min-width: 768px) and (max-width: 959px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media only screen and (min-width: 480px) and (max-width: 767px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media only screen and (max-width: 479px) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="media常用媒体尺寸"><a href="#media常用媒体尺寸" class="headerlink" title="@media常用媒体尺寸"></a>@media常用媒体尺寸</h5><p><img src="/2018/08/10/响应式设计——媒体查询（-media）/size.jpg" alt="@media常用媒体尺寸"></p>
+<h5 id="方案推荐-移动端-PC"><a href="#方案推荐-移动端-PC" class="headerlink" title="方案推荐(移动端+PC)"></a>方案推荐(移动端+PC)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width: 320px) &#123;html&#123;font-size:50px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 360px) &#123;html&#123;font-size:56.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 375px) &#123;html&#123;font-size:58.59375px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 400px) &#123;html&#123;font-size:62.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 414px) &#123;html&#123;font-size:64.6875px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 440px) &#123;html&#123;font-size:68.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 480px) &#123;html&#123;font-size:75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 520px) &#123;html&#123;font-size:81.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 560px) &#123;html&#123;font-size:87.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 600px) &#123;html&#123;font-size:93.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 640px) &#123;html&#123;font-size:100px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 680px) &#123;html&#123;font-size:106.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 720px) &#123;html&#123;font-size:112.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 760px) &#123;html&#123;font-size:118.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 800px) &#123;html&#123;font-size:125px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 960px) &#123;html&#123;font-size:150px;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://blog.csdn.net/iefreer/article/details/51227870" target="_blank" rel="noopener">响应式设计媒体查询尺寸分界点一览表</a><br><a href="https://blog.csdn.net/qq_26445509/article/details/51567590" target="_blank" rel="noopener">@media响应式媒介尺寸</a><br><a href="http://note.youdao.com/noteshare?id=26d4d92359cec3b42df0cad58f8868d4&amp;sub=WEB7ce290d56a2fbf7e26468841163303a6" target="_blank" rel="noopener">@media 最全机型</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhangjinling1993.github.io/2018/08/10/响应式设计——媒体查询（-media）/" data-id="cjlvpr1vx0000ngubl9mpwfzv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/media/">media</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta/">meta</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/07/Vue-js-知识梳理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue.js 知识梳理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/经验总结/">经验总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/media/" style="font-size: 10px;">media</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/思维导图/" style="font-size: 10px;">思维导图</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/10/响应式设计——媒体查询（-media）/">媒体查询（@media）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/07/Vue-js-知识梳理/">Vue.js 知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/21/前端学路径——整理自Github-Roadmap/">前端学习路径——整理自Github Roadmap</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/14/my-first-blog/">Hexo + github 搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jinling Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
