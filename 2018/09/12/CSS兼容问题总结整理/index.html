@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS兼容问题总结整理 | JinLing&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网页的浏览器兼容性，指网页在各种浏览器上的显示效果尽量保持一致的状态。 兼容性起因浏览器大战 兼容性的重要性 网站做好了浏览器兼容，能够让网站在不同的浏览器下都正常显示 浏览器兼容能够抓住更多的网站访客 浏览器兼容能够给客户更好的体验  目前常见的兼容方案 IE条件注释法  123&amp;lt;!--[if IE]&amp;gt;	这段文字只在IE浏览器显示&amp;lt;![endif]--&amp;gt;  类内属性前缀法">
+<meta name="keywords" content="CSS,meta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS兼容问题总结整理">
+<meta property="og:url" content="https://zhangjinling1993.github.io/2018/09/12/CSS兼容问题总结整理/index.html">
+<meta property="og:site_name" content="JinLing&#39;s blog">
+<meta property="og:description" content="网页的浏览器兼容性，指网页在各种浏览器上的显示效果尽量保持一致的状态。 兼容性起因浏览器大战 兼容性的重要性 网站做好了浏览器兼容，能够让网站在不同的浏览器下都正常显示 浏览器兼容能够抓住更多的网站访客 浏览器兼容能够给客户更好的体验  目前常见的兼容方案 IE条件注释法  123&amp;lt;!--[if IE]&amp;gt;	这段文字只在IE浏览器显示&amp;lt;![endif]--&amp;gt;  类内属性前缀法">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-12T01:54:59.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS兼容问题总结整理">
+<meta name="twitter:description" content="网页的浏览器兼容性，指网页在各种浏览器上的显示效果尽量保持一致的状态。 兼容性起因浏览器大战 兼容性的重要性 网站做好了浏览器兼容，能够让网站在不同的浏览器下都正常显示 浏览器兼容能够抓住更多的网站访客 浏览器兼容能够给客户更好的体验  目前常见的兼容方案 IE条件注释法  123&amp;lt;!--[if IE]&amp;gt;	这段文字只在IE浏览器显示&amp;lt;![endif]--&amp;gt;  类内属性前缀法">
+  
+    <link rel="alternate" href="/atom.xml" title="JinLing&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JinLing&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zhangjinling1993.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS兼容问题总结整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/12/CSS兼容问题总结整理/" class="article-date">
+  <time datetime="2018-09-12T01:39:33.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验总结/">经验总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS兼容问题总结整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网页的浏览器兼容性，指网页在各种浏览器上的显示效果尽量保持一致的状态。</p>
+<h4 id="兼容性起因"><a href="#兼容性起因" class="headerlink" title="兼容性起因"></a>兼容性起因</h4><p>浏览器大战</p>
+<h4 id="兼容性的重要性"><a href="#兼容性的重要性" class="headerlink" title="兼容性的重要性"></a>兼容性的重要性</h4><ul>
+<li>网站做好了浏览器兼容，能够让网站在不同的浏览器下都正常显示</li>
+<li>浏览器兼容能够抓住更多的网站访客</li>
+<li>浏览器兼容能够给客户更好的体验</li>
+</ul>
+<h4 id="目前常见的兼容方案"><a href="#目前常见的兼容方案" class="headerlink" title="目前常见的兼容方案"></a>目前常见的兼容方案</h4><ol>
+<li><strong>IE条件注释法</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if IE]&gt;</span><br><span class="line">	这段文字只在IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>类内属性前缀法</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_</td>
+<td>_color:red;</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>*</td>
+<td>*color:green;</td>
+<td>IE6/7 </td>
+</tr>
+<tr>
+<td>\9</td>
+<td>color:yellow\9;</td>
+<td>IE6/IE7/IE8/IE9/IE10都生效</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>color:blue\9;</td>
+<td>IE8/IE9/IE10都生效</td>
+</tr>
+<tr>
+<td>\9\0</td>
+<td>color:purple\9;</td>
+<td>只对IE9/IE10生效</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><strong>浏览器前缀法</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>内核</th>
+<th>主要代表的浏览器</th>
+<th>前缀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trident</td>
+<td>IE浏览器</td>
+<td>-ms</td>
+</tr>
+<tr>
+<td>Gecko</td>
+<td>Firefox</td>
+<td>-moz</td>
+</tr>
+<tr>
+<td>Presto</td>
+<td>Opera</td>
+<td>-o</td>
+</tr>
+<tr>
+<td>Webkit</td>
+<td>Chrome和Safari</td>
+<td>-webkit</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li><strong>通过meta标签来控制</strong></li>
+</ol>
+<p>国内浏览器多为双核浏览器（360浏览器等），即webkit+IE，兼容起来实在费神，我们可以使用定义meta标签强制浏览器使用某种内核打开页面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//若页面需默认用极速核，增加标签：</span><br><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt; </span><br><span class="line">//若页面需默认用ie兼容内核，增加标签：</span><br><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;ie-comp&quot;&gt; </span><br><span class="line">// 若页面需默认用ie标准内核，增加标签：</span><br><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;ie-stand&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="我在工作中遇到的部分兼容性问题"><a href="#我在工作中遇到的部分兼容性问题" class="headerlink" title="我在工作中遇到的部分兼容性问题"></a>我在工作中遇到的部分兼容性问题</h4><ol>
+<li><p><strong>浏览器默认margin和padding各有不同</strong></p>
+<ul>
+<li><p>[x] reset.css重置全局样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   margin:0;</span><br><span class="line">   padding:0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>Chrome中文界面下小于12px的文本会强制按照12px显示</strong></p>
+<ul>
+<li><p>[x] 可使用CSS属性webkit-text-size-adjust</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; webkit-text-size-adjust:none; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>漏写DTD声明在IE中会触发浏览器的<code>怪异模式</code>（FireFox中仍会按照标准模式来解析）</strong></p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 一定要加DTD声明</li>
+</ul>
+</li>
+<li><p><strong>IE和FireFox中相邻DIV上下margin会重合，重合时按照绝对值较大的margin进行展示</strong></p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 养成固定习惯，尽量只用margin-top或者margin-bottom中的一个</li>
+</ul>
+</li>
+<li><p><strong>透明度：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   opacity: 0.6 ; </span><br><span class="line">   filter: alpha(opacity=60)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>所有浏览器下，p标签中间加载块元素都会被分解成两个p元素</strong></p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 不要在p标签中间加块级元素</li>
+</ul>
+</li>
+<li><p><strong>a标签在访问后，各状态的样式会混乱掉</strong></p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 4各伪类的顺序按照：L-V-H-A</li>
+</ul>
+</li>
+<li><p><strong>渐变的兼容</strong></p>
+<ul>
+<li><p>[x] 使用filter滤镜（带透明度的渐变，在部分低版本浏览器上会失去透明度）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.gradient&#123; </span><br><span class="line">    width:300px; </span><br><span class="line">    height:150px; </span><br><span class="line">    filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=100,finishy=0) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#483F96,endcolorstr=#fff,gradientType=1);</span><br><span class="line">    -ms-filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=100,finishy=0) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#483F96,endcolorstr=#fff,gradientType=1);/*IE8*/ </span><br><span class="line">    background:red; /* 一些不支持背景渐变的浏览器 */ </span><br><span class="line">    background:-moz-linear-gradient(top, red, rgba(0, 0, 255, 0.5)); </span><br><span class="line">    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0.5)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="9">
+<li><p><strong>360浏览器极速模式和兼容模式下产生的差异</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="10">
+<li><p><strong>a标签使用来绝对定位后，锚点会失效</strong></p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 锚点连接不要使用绝对定位</li>
+</ul>
+</li>
+<li><p>乱入两条js的：</p>
+<ul>
+<li><p>IE下可以用获取常规属性的方法来获取自定义属性，也可以用getAttribute()；FireFox中只能使用getAttribute()获取自定义属性</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 统一使用getAttribute();</li>
+</ul>
+</li>
+<li><p>IE下，event对象只有x/y属性；FireFox下，只有pageX/pageY属性</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 使用条件注释语句</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;!--[if It IE 9]&gt;
+    &lt;script src=&quot;http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js &quot;&gt;&lt;/script&gt;
+&lt;![end if]--&gt;
+</code></pre></li>
+</ol>
+<hr>
+
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7" target="_blank" rel="noopener">浏览器兼容性-维基百科</a></li>
+<li><a href="https://blog.csdn.net/freshlover/article/details/12132801" target="_blank" rel="noopener">史上最全的CSS hack方式一览</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhangjinling1993.github.io/2018/09/12/CSS兼容问题总结整理/" data-id="cjlyhbzfz0000m4ubnvp0q0oo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta/">meta</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/10/响应式设计——媒体查询（-media）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">媒体查询（@media）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/经验总结/">经验总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/media/" style="font-size: 10px;">media</a> <a href="/tags/meta/" style="font-size: 20px;">meta</a> <a href="/tags/思维导图/" style="font-size: 10px;">思维导图</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/12/CSS兼容问题总结整理/">CSS兼容问题总结整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/10/响应式设计——媒体查询（-media）/">媒体查询（@media）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/07/Vue-js-知识梳理/">Vue.js 知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/21/前端学路径——整理自Github-Roadmap/">前端学习路径——整理自Github Roadmap</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/14/my-first-blog/">Hexo + github 搭建个人博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jinling Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
