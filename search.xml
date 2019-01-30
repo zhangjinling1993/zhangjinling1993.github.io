@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[2.VS COde之我的settings配置]]></title>
-    <url>%2F2019%2F01%2F30%2F2-VS-COde%E4%B9%8B%E6%88%91%E7%9A%84settings%E9%85%8D%E7%BD%AE%2F</url>
+    <title><![CDATA[2.VS COde之我的settings]]></title>
+    <url>%2F2019%2F01%2F30%2F2-VS-COde%E4%B9%8B%E6%88%91%E7%9A%84settings%2F</url>
     <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930&#123; // 为指定的语法定义配置文件或使用带有特定规则的配置文件。 &quot;emmet.syntaxProfiles&quot;: &#123; &quot;vue-html&quot;: &quot;html&quot;, &quot;vue&quot;: &quot;html&quot;, &quot;javascript&quot;: &quot;javascriptreact&quot;, &#125;, // 在jsx中使用emmet自动补全代码 &quot;emmet.triggerExpansionOnTab&quot;: true, &quot;emmet.includeLanguages&quot;: &#123; &quot;javascript&quot;: &quot;html&quot;, &#125;, // Git安装位置 &quot;git.path&quot;: &quot;D:/Program Files/Git/bin/git.exe&quot;, // 配置文件关联，比如stylus使用css智能提示 &quot;files.associations&quot;: &#123; &quot;*.styl&quot;: &quot;css&quot;, &quot;*.less&quot;: &quot;css&quot;, &quot;*.sass&quot;: &quot;css&quot;, &#125;, // 自动保存的时机 &quot;files.autoSave&quot;: &quot;onFocusChange&quot;, // 控制是否显示工作台底部状态栏中的 Twitter 反馈 (笑脸图标)。 &quot;workbench.statusBar.feedback.visible&quot;: false,&#125;]]></content>
       <categories>
         <category>学习笔记</category>
