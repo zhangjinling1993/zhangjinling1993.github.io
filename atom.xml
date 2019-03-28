@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangjinling1993.github.io/"/>
-  <updated>2019-03-22T08:46:13.056Z</updated>
+  <updated>2019-03-28T07:02:57.004Z</updated>
   <id>https://zhangjinling1993.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>看完阮一峰的React教程后, 我写了一个TodoList</title>
+    <link href="https://zhangjinling1993.github.io/2019/03/28/%E7%9C%8B%E8%BF%87%E9%98%AE%E4%B8%80%E5%B3%B0%E7%9A%84%E6%95%99%E7%A8%8B%E5%90%8E-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AATodoList/"/>
+    <id>https://zhangjinling1993.github.io/2019/03/28/看过阮一峰的教程后-我写了一个TodoList/</id>
+    <published>2019-03-28T06:19:15.000Z</published>
+    <updated>2019-03-28T07:02:57.004Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="react" scheme="https://zhangjinling1993.github.io/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue.js 记2019年3月小组分享内容</title>
