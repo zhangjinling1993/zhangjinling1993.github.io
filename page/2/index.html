@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。">
-<meta name="keywords" content="github博客,金玲,zhangjinling,zhangjinling1993,前端,技术博客,html,css,javascript">
+<meta name="description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。">
+<meta name="keywords" content="github博客,金玲博客,zhangjinling,zhangjinling1993,前端,技术博客,html,css,javascript">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JinLing&#39;s blog">
 <meta property="og:url" content="https://zhangjinling1993.github.io/page/2/index.html">
 <meta property="og:site_name" content="JinLing&#39;s blog">
-<meta property="og:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。">
+<meta property="og:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JinLing&#39;s blog">
-<meta name="twitter:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。">
+<meta name="twitter:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。">
 
 
 
@@ -255,6 +255,208 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/08/10/响应式设计——媒体查询（-media）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinling Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JinLing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/响应式设计——媒体查询（-media）/" itemprop="url">媒体查询（@media）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T10:37:12+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经验总结/" itemprop="url" rel="index">
+                    <span itemprop="name">经验总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>媒体查询是可以更精确的作用于不同媒介类型，是实现响应式布局/自适应的一种很好的方法。随着移动端的普及变得越来越重要。</p>
+<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="在使用媒体查询之前，需要设置好-lt-meta-标签："><a href="#在使用媒体查询之前，需要设置好-lt-meta-标签：" class="headerlink" title="在使用媒体查询之前，需要设置好&lt;meta>标签："></a>在使用媒体查询之前，需要设置好&lt;meta>标签：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1,minmum-scale=1,maxmum-scale=1,user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Viewport 属性名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>设置layout viewport 的宽度，为一个正整数，使用字符串”width-device”表示设备宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置layout viewport 的高度，这个属性对我们并不重要，很少使用</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>设置页面的初始缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>允许用户的最小缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>允许用户的最大缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>是否允许用户进行缩放，值为”no”或”yes”, no 代表不允许，yes代表允许</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>target-densitydpi(安卓特有)</td>
+<td>值可以为一个数值或 high-dpi 、 medium-dpi、 low-dpi、 device-dpi 这几个字符串中的一个</td>
+</tr>
+</tbody>
+</table>
+<h5 id="media常用方式"><a href="#media常用方式" class="headerlink" title="@media常用方式"></a>@media常用方式</h5><ol>
+<li><p>用min-width时，小的放上面大的在下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (min-width: 768px)&#123; //&gt;=768的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (min-width: 992px)&#123; //&gt;=992的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (min-width: 1200)&#123; //&gt;=1200的设备 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用max-width那么就是大的在上面，小的在下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (max-width: 1199)&#123; //&lt;=1199的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 991px)&#123; //&lt;=991的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 767px)&#123; //&lt;=768的设备 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>混合应用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@media media screen and (min-width:1200px) &#123;&#125;</span><br><span class="line"></span><br><span class="line">@media media screen and (min-width: 960px) and (max-width: 1199px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (min-width: 768px) and (max-width: 959px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media only screen and (min-width: 480px) and (max-width: 767px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media only screen and (max-width: 479px) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="media常用媒体尺寸"><a href="#media常用媒体尺寸" class="headerlink" title="@media常用媒体尺寸"></a>@media常用媒体尺寸</h5><p><img src="/2018/08/10/响应式设计——媒体查询（-media）/size.jpg" alt="@media常用媒体尺寸"></p>
+<h5 id="方案推荐-移动端-PC"><a href="#方案推荐-移动端-PC" class="headerlink" title="方案推荐(移动端+PC)"></a>方案推荐(移动端+PC)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width: 320px) &#123;html&#123;font-size:50px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 360px) &#123;html&#123;font-size:56.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 375px) &#123;html&#123;font-size:58.59375px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 400px) &#123;html&#123;font-size:62.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 414px) &#123;html&#123;font-size:64.6875px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 440px) &#123;html&#123;font-size:68.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 480px) &#123;html&#123;font-size:75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 520px) &#123;html&#123;font-size:81.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 560px) &#123;html&#123;font-size:87.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 600px) &#123;html&#123;font-size:93.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 640px) &#123;html&#123;font-size:100px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 680px) &#123;html&#123;font-size:106.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 720px) &#123;html&#123;font-size:112.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 760px) &#123;html&#123;font-size:118.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 800px) &#123;html&#123;font-size:125px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 960px) &#123;html&#123;font-size:150px;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://blog.csdn.net/iefreer/article/details/51227870" target="_blank" rel="noopener">响应式设计媒体查询尺寸分界点一览表</a><br><a href="https://blog.csdn.net/qq_26445509/article/details/51567590" target="_blank" rel="noopener">@media响应式媒介尺寸</a><br><a href="http://note.youdao.com/noteshare?id=26d4d92359cec3b42df0cad58f8868d4&amp;sub=WEB7ce290d56a2fbf7e26468841163303a6" target="_blank" rel="noopener">@media 最全机型</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -875,7 +1077,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Jinling Zhang</p>
-              <p class="site-description motion-element" itemprop="description">我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。</p>
+              <p class="site-description motion-element" itemprop="description">我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -885,7 +1087,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -907,7 +1109,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

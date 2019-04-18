@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。">
-<meta name="keywords" content="github博客,金玲,zhangjinling,zhangjinling1993,前端,技术博客,html,css,javascript">
+<meta name="description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。">
+<meta name="keywords" content="github博客,金玲博客,zhangjinling,zhangjinling1993,前端,技术博客,html,css,javascript">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JinLing&#39;s blog">
 <meta property="og:url" content="https://zhangjinling1993.github.io/index.html">
 <meta property="og:site_name" content="JinLing&#39;s blog">
-<meta property="og:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。">
+<meta property="og:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JinLing&#39;s blog">
-<meta name="twitter:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。">
+<meta name="twitter:description" content="我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。">
 
 
 
@@ -269,6 +269,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/04/18/纯CSS绘制3D立方体/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinling Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JinLing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/18/纯CSS绘制3D立方体/" itemprop="url">纯CSS绘制3D立方体</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-18T13:40:42+08:00">
+                2019-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>本篇记录的是使用CSS3绘制3D立方体，并旋转起来。</p>
+<p>我的思路：<br>1️⃣ 首先，用div元素画6个正方形摞在一起放在画布中间。为了区分，分别给每个div选择了不同的颜色，并且设置为半透明方便透视。<br>2️⃣ 将6个div元素分为三组（上下一组、左右一组、前后一组），想象以画布中心为圆点，使三组分别沿x/y/z轴旋转90度。<br>3️⃣ 上下一组，一张向上推50%正方形边长，一张向下推50%正方形边长；左右同理向左右推50%边长，前后同理向前后推50%边长。<br>4️⃣ 整体旋转展示。</p>
+<p><img src="/2019/04/18/纯CSS绘制3D立方体/3dbox.png" alt="将立方体的6个面摞在一起放在画布中间"></p>
+<p>查看效果：<a href="http://111.231.79.243/demo/3D_Box_animation.html" target="_blank" rel="noopener">Demo效果</a></p>
+<p>※ Html代码&amp;CSS样式布局：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .container &#123;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 400px;</span><br><span class="line">            border: 1px solid #cccccc;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box &#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            margin: auto;</span><br><span class="line">            margin-top: 150px;</span><br><span class="line">            transform-style: preserve-3d;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 100%;</span><br><span class="line">            opacity: .5;</span><br><span class="line">            transform-origin: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div:nth-of-type(1) &#123;</span><br><span class="line">            background-color: red;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div:nth-of-type(2) &#123;</span><br><span class="line">            background-color: yellow;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div:nth-of-type(3) &#123;</span><br><span class="line">            background-color: green;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div:nth-of-type(4) &#123;</span><br><span class="line">            background-color: blue;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div:nth-of-type(5) &#123;</span><br><span class="line">            background-color: black;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .box div:nth-of-type(6) &#123;</span><br><span class="line">            background-color: darkmagenta;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;box animate&quot;&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>※ CSS3添加6个正方形的动画效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">.box.animate div &#123;</span><br><span class="line">    animation: ease 4s 0s infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box.animate div:nth-of-type(1) &#123;</span><br><span class="line">    animation-name: box1-move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box.animate div:nth-of-type(2) &#123;</span><br><span class="line">    animation-name: box2-move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box.animate div:nth-of-type(3) &#123;</span><br><span class="line">    animation-name: box3-move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box.animate div:nth-of-type(4) &#123;</span><br><span class="line">    animation-name: box4-move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box.animate div:nth-of-type(5) &#123;</span><br><span class="line">    animation-name: box5-move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box.animate div:nth-of-type(6) &#123;</span><br><span class="line">    animation-name: box6-move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box1-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotatex(0deg);</span><br><span class="line">    &#125;</span><br><span class="line">    25% &#123;</span><br><span class="line">        transform: rotatex(90deg);</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: rotatex(90deg) translatez(50px);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotatex(90deg) translatez(50px);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box2-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotatex(0deg);</span><br><span class="line">    &#125;</span><br><span class="line">    25% &#123;</span><br><span class="line">        transform: rotatex(90deg);</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: rotatex(90deg) translatez(-50px);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotatex(90deg) translatez(-50px);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box3-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotatex(0deg);</span><br><span class="line">    &#125;</span><br><span class="line">    25% &#123;</span><br><span class="line">        transform: rotatey(90deg);</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: rotatey(90deg) translatez(50px);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotatey(90deg) translatez(50px);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box4-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotatex(0deg);</span><br><span class="line">    &#125;</span><br><span class="line">    25% &#123;</span><br><span class="line">        transform: rotatey(90deg);</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: rotatey(90deg) translatez(-50px);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotatey(90deg) translatez(-50px);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box5-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    25% &#123;</span><br><span class="line">        transform: translatez(0px);</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: translatez(50px);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: translatez(50px);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box6-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    25% &#123;</span><br><span class="line">        transform: translatez(0px);</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: translatez(-50px);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: translatez(-50px);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>※ 添加整提旋转动画<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.box.animate &#123;</span><br><span class="line">    animation: box-move ease 4s 0s infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes box-move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotatex(0deg) rotatey(0deg)</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        transform: rotatex(45deg) rotatey(45deg)</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotatex(405deg) rotatey(405deg)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>动画转的我有点头晕🤦‍♀️，所以我决定把.animate类名剥离出来，用JavaScript通过按钮触发的模式将.animate添加到DOM中去，这样，只有点击按钮后动画才会被触发。最后，我添加了两个按钮，move和stop，分别用来触发动画和使动画停止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Html代码 --&gt;</span><br><span class="line">&lt;div class=&quot;ope&quot;&gt;</span><br><span class="line">    &lt;button id=&quot;animate&quot;&gt;Move&lt;/button&gt;</span><br><span class="line">    &lt;button id=&quot;stop&quot;&gt;Stop&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- CSS代码 --&gt;</span><br><span class="line">.ope &#123;</span><br><span class="line">    margin-top: 100px;</span><br><span class="line">   text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.ope button &#123;</span><br><span class="line">    margin: 0 10px;</span><br><span class="line">    border: 1px solid #4380f5;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    background-color: #4380f5;</span><br><span class="line">    color: #ffffff;</span><br><span class="line">    outline: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.ope button:hover &#123;</span><br><span class="line">    background-color: #3e76e3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.ope button:active &#123;</span><br><span class="line">    background-color: #3361ba;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- JavaScript代码 --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    (function () &#123;</span><br><span class="line">        var box = document.getElementsByClassName(&apos;box&apos;)[0];</span><br><span class="line"></span><br><span class="line">        document.getElementById(&apos;animate&apos;).onclick = function () &#123;</span><br><span class="line">            box.className = &apos;box animate&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        document.getElementById(&apos;stop&apos;).onclick = function () &#123;</span><br><span class="line">            box.className = &apos;box&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/04/18/Hexo-常用功能配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -288,7 +416,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/18/Hexo-常用功能配置/" itemprop="url">Hexo 常用功能配置</a></h1>
+                <a class="post-title-link" href="/2019/04/18/Hexo-常用功能配置/" itemprop="url">Hexo 个人博客 常用功能配置</a></h1>
         
 
         <div class="post-meta">
@@ -386,7 +514,7 @@
 <li><p>百度站长平台提交网站链接</p>
 <ul>
 <li>到<a href="https://ziyuan.baidu.com/dashboard/index" target="_blank" rel="noopener">百度站长平台</a> &gt; 我的网站 &gt; 站点管理 中添加我的网站链接；</li>
-<li>在第二步验证网站时选择文件验证，并下载验证文件放到博客项目代码下的public目录下</li>
+<li>在第二步验证网站时选择文件验证，并下载验证文件放到博客项目代码下的根目录下</li>
 <li>在网页抓取 &gt; 链接提交 中按步骤提交</li>
 </ul>
 </li>
@@ -1900,208 +2028,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/08/10/响应式设计——媒体查询（-media）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinling Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JinLing's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/响应式设计——媒体查询（-media）/" itemprop="url">媒体查询（@media）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T10:37:12+08:00">
-                2018-08-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/经验总结/" itemprop="url" rel="index">
-                    <span itemprop="name">经验总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>媒体查询是可以更精确的作用于不同媒介类型，是实现响应式布局/自适应的一种很好的方法。随着移动端的普及变得越来越重要。</p>
-<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="在使用媒体查询之前，需要设置好-lt-meta-标签："><a href="#在使用媒体查询之前，需要设置好-lt-meta-标签：" class="headerlink" title="在使用媒体查询之前，需要设置好&lt;meta>标签："></a>在使用媒体查询之前，需要设置好&lt;meta>标签：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1,minmum-scale=1,maxmum-scale=1,user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>Viewport 属性名</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>width</td>
-<td>设置layout viewport 的宽度，为一个正整数，使用字符串”width-device”表示设备宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>设置layout viewport 的高度，这个属性对我们并不重要，很少使用</td>
-</tr>
-<tr>
-<td>initial-scale</td>
-<td>设置页面的初始缩放值，为一个数字，可以带小数</td>
-</tr>
-<tr>
-<td>minimum-scale</td>
-<td>允许用户的最小缩放值，为一个数字，可以带小数</td>
-</tr>
-<tr>
-<td>maximum-scale</td>
-<td>允许用户的最大缩放值，为一个数字，可以带小数</td>
-</tr>
-<tr>
-<td>user-scalable</td>
-<td>是否允许用户进行缩放，值为”no”或”yes”, no 代表不允许，yes代表允许</td>
-</tr>
-<tr>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>target-densitydpi(安卓特有)</td>
-<td>值可以为一个数值或 high-dpi 、 medium-dpi、 low-dpi、 device-dpi 这几个字符串中的一个</td>
-</tr>
-</tbody>
-</table>
-<h5 id="media常用方式"><a href="#media常用方式" class="headerlink" title="@media常用方式"></a>@media常用方式</h5><ol>
-<li><p>用min-width时，小的放上面大的在下面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (min-width: 768px)&#123; //&gt;=768的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (min-width: 992px)&#123; //&gt;=992的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (min-width: 1200)&#123; //&gt;=1200的设备 &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用max-width那么就是大的在上面，小的在下面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (max-width: 1199)&#123; //&lt;=1199的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 991px)&#123; //&lt;=991的设备 &#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 767px)&#123; //&lt;=768的设备 &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>混合应用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@media media screen and (min-width:1200px) &#123;&#125;</span><br><span class="line"></span><br><span class="line">@media media screen and (min-width: 960px) and (max-width: 1199px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (min-width: 768px) and (max-width: 959px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media only screen and (min-width: 480px) and (max-width: 767px) &#123;...&#125;</span><br><span class="line"></span><br><span class="line">@media only screen and (max-width: 479px) &#123;...&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="media常用媒体尺寸"><a href="#media常用媒体尺寸" class="headerlink" title="@media常用媒体尺寸"></a>@media常用媒体尺寸</h5><p><img src="/2018/08/10/响应式设计——媒体查询（-media）/size.jpg" alt="@media常用媒体尺寸"></p>
-<h5 id="方案推荐-移动端-PC"><a href="#方案推荐-移动端-PC" class="headerlink" title="方案推荐(移动端+PC)"></a>方案推荐(移动端+PC)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width: 320px) &#123;html&#123;font-size:50px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 360px) &#123;html&#123;font-size:56.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 375px) &#123;html&#123;font-size:58.59375px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 400px) &#123;html&#123;font-size:62.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 414px) &#123;html&#123;font-size:64.6875px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 440px) &#123;html&#123;font-size:68.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 480px) &#123;html&#123;font-size:75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 520px) &#123;html&#123;font-size:81.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 560px) &#123;html&#123;font-size:87.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 600px) &#123;html&#123;font-size:93.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 640px) &#123;html&#123;font-size:100px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 680px) &#123;html&#123;font-size:106.25px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 720px) &#123;html&#123;font-size:112.5px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 760px) &#123;html&#123;font-size:118.75px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 800px) &#123;html&#123;font-size:125px;&#125;&#125;</span><br><span class="line">@media screen and (min-width: 960px) &#123;html&#123;font-size:150px;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://blog.csdn.net/iefreer/article/details/51227870" target="_blank" rel="noopener">响应式设计媒体查询尺寸分界点一览表</a><br><a href="https://blog.csdn.net/qq_26445509/article/details/51567590" target="_blank" rel="noopener">@media响应式媒介尺寸</a><br><a href="http://note.youdao.com/noteshare?id=26d4d92359cec3b42df0cad58f8868d4&amp;sub=WEB7ce290d56a2fbf7e26468841163303a6" target="_blank" rel="noopener">@media 最全机型</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2142,7 +2068,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Jinling Zhang</p>
-              <p class="site-description motion-element" itemprop="description">我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，联系邮箱710737179@qq.com。</p>
+              <p class="site-description motion-element" itemprop="description">我叫金玲，是一名前端技术人员，目前坐标上海，这是我的技术博客，如有问题欢迎指正。🙋联系邮箱710737179@qq.com。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -2152,7 +2078,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2174,7 +2100,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
