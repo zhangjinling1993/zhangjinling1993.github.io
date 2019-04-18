@@ -269,6 +269,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/04/18/Hexo-常用功能配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinling Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JinLing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/18/Hexo-常用功能配置/" itemprop="url">Hexo 常用功能配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-18T10:47:28+08:00">
+                2019-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h4 id="一、hexo-添加站内搜索功能"><a href="#一、hexo-添加站内搜索功能" class="headerlink" title="一、hexo 添加站内搜索功能"></a>一、hexo 添加站内搜索功能</h4><ol>
+<li><p>安装搜索插件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改站点配置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Local_search</span><br><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">format: html</span><br><span class="line">limit: 10000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改主题配置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">enable: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除缓存，预览主题效果</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Next主题 配置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Next主题有多种隐藏模式，默认Mist</span><br><span class="line"></span><br><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="二、hexo-添加Tags"><a href="#二、hexo-添加Tags" class="headerlink" title="二、hexo 添加Tags"></a>二、hexo 添加Tags</h4><ol>
+<li><p>新建Tags页面</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到tags文件位置，打开并修改index.md</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Tags</span><br><span class="line">date: 2019-03-28 15:28:16</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改主题配置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: / || home</span><br><span class="line">#about: /about/ || user</span><br><span class="line">tags: /tags/ || tags</span><br><span class="line">#categories: /categories/ || th</span><br><span class="line">archives: /archives/ || archive</span><br><span class="line">#schedule: /schedule/ || calendar</span><br><span class="line">#sitemap: /sitemap.xml || sitemap</span><br><span class="line">#commonweal: /404/ || heartbeat</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>将<strong>tags: /tags/ || tags</strong>前面的#去掉</p>
+<h4 id="三、添加百度-sitemap"><a href="#三、添加百度-sitemap" class="headerlink" title="三、添加百度 sitemap"></a>三、添加百度 sitemap</h4><ol>
+<li><p>生成站点地图</p>
+<ul>
+<li><p>安装百度站点地图插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件(根目录下的_config.yml)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#站点地图</span><br><span class="line">Plugins:</span><br><span class="line">- hexo-generator-baidu-sitemap</span><br><span class="line"></span><br><span class="line">baidusitemap:</span><br><span class="line">    path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看结果<br>运行命令 hexo g，进入public目录，发现里面有baidusitemap.xml文件即可</p>
+</li>
+</ul>
+</li>
+<li><p>百度站长平台提交网站链接</p>
+<ul>
+<li>到<a href="https://ziyuan.baidu.com/dashboard/index" target="_blank" rel="noopener">百度站长平台</a> &gt; 我的网站 &gt; 站点管理 中添加我的网站链接；</li>
+<li>在第二步验证网站时选择文件验证，并下载验证文件放到博客项目代码下的public目录下</li>
+<li>在网页抓取 &gt; 链接提交 中按步骤提交</li>
+</ul>
+</li>
+</ol>
+<h4 id="四、添加RSS订阅功能"><a href="#四、添加RSS订阅功能" class="headerlink" title="四、添加RSS订阅功能"></a>四、添加RSS订阅功能</h4><ol>
+<li><p>安装hexo-generator-feed插件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件(根目录下的_config.yml)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">    type: atom</span><br><span class="line">    path: atom.xml</span><br><span class="line">    limit: 20</span><br><span class="line">    hub:</span><br><span class="line">    content:</span><br><span class="line">    content_limit:</span><br><span class="line">    content_limit_delim: &apos; &apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ul>
+<li><a href="https://blog.csdn.net/linshuhe1/article/details/52424573" target="_blank" rel="noopener">Hexo个人免费博客(三) next主题、评论、阅读量统计和站内搜索</a></li>
+<li><a href="https://blog.csdn.net/qq_42247008/article/details/85003789" target="_blank" rel="noopener">hexo 使用tags错误</a></li>
+<li><a href="https://www.jianshu.com/p/9c2d6db2f855" target="_blank" rel="noopener">hexo(3)-生成sitemap站点地图</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/04/12/Node-js-爬取安居客-上海-150-200W之间的房源信息/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1919,126 +2102,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/08/07/Vue-js-知识梳理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinling Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JinLing's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/07/Vue-js-知识梳理/" itemprop="url">Vue.js 知识梳理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-07T11:39:17+08:00">
-                2018-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/2018/08/07/Vue-js-知识梳理/Vue.js.png" alt="VUe.js 知识梳理 思维导图"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2089,7 +2152,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2643,6 +2706,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
