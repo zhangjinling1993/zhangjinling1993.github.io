@@ -269,6 +269,207 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/04/19/H5-前端语义化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinling Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JinLing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/19/H5-前端语义化/" itemprop="url">H5 前端语义化标签，及其低版本浏览器兼容解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-19T17:30:34+08:00">
+                2019-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h4 id="🌵-一、什么是HTML语义化"><a href="#🌵-一、什么是HTML语义化" class="headerlink" title="🌵 一、什么是HTML语义化"></a>🌵 一、什么是HTML语义化</h4><p>HTML5中新添加了部分语义化标签，这样我们就可以根据网页内容的结构来选择合适的语义标签，不再是千篇一律的&lt;div>和&lt;span>。</p>
+<p>这样做可以：<br>1️⃣ 页面结构清晰，页面在丢失CSS样式时，仍能够清晰的展现  出页面的基本结构。<br>2️⃣ 代码规范易于维护，在团队开发中更有利。<br>3️⃣ 便于浏览器解析，有利于SEO。</p>
+<h4 id="🌵-二、HTML语义化标签主要有哪些"><a href="#🌵-二、HTML语义化标签主要有哪些" class="headerlink" title="🌵 二、HTML语义化标签主要有哪些"></a>🌵 二、HTML语义化标签主要有哪些</h4><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;header></td>
+<td>定义部分区域的页眉(头部)</td>
+</tr>
+<tr>
+<td>&lt;nav></td>
+<td>定义含有多个超链接的导航栏区域</td>
+</tr>
+<tr>
+<td>&lt;main></td>
+<td>定义主要内容区域</td>
+</tr>
+<tr>
+<td>&lt;section></td>
+<td>定义某个专题组</td>
+</tr>
+<tr>
+<td>&lt;article></td>
+<td>定义与外层元素有关的文章，可能是论坛帖子、博客、评论…</td>
+</tr>
+<tr>
+<td>&lt;aside></td>
+<td>侧边栏</td>
+</tr>
+<tr>
+<td>&lt;figure></td>
+<td>定义独立的流内容(图像、图标、照片、代码等，删除后不会对文档流产生影响)</td>
+</tr>
+<tr>
+<td>&lt;figcaption></td>
+<td>置于&lt;figure>元素的第一个或者最后一个元素的位置,用于对figure的内容进行说明</td>
+</tr>
+<tr>
+<td>&lt;footer></td>
+<td>定义部分区域的页脚(底部包含版权数据或者联系方式等)</td>
+</tr>
+<tr>
+<td>&lt;dialog></td>
+<td>定义一段对话</td>
+</tr>
+<tr>
+<td>&lt;address></td>
+<td>定义页面或者作者的联系地址</td>
+</tr>
+<tr>
+<td>&lt;mark></td>
+<td>定义标记</td>
+</tr>
+<tr>
+<td>…</td>
+<td>(待补充部分)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="🌵-三、HTML语义化在低版本浏览器兼容解决方案"><a href="#🌵-三、HTML语义化在低版本浏览器兼容解决方案" class="headerlink" title="🌵 三、HTML语义化在低版本浏览器兼容解决方案"></a>🌵 三、HTML语义化在低版本浏览器兼容解决方案</h4><p>语义化是在H5中明确的规范，IE8及更早IE版本无法在这些元素中渲染CSS效果，有些工作需要中可能会涉及到兼容的问题。</p>
+<p>目前的解决方案有：</p>
+<ol>
+<li><p>JavaScript添加自定义标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.createElement(&quot;nav&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>引入<a href="https://www.bootcdn.cn/html5shiv/" target="_blank" rel="noopener">html5shiv.js</a> —— 针对IE浏览器的HTML5 JavaScript补丁，目的是让IE识别并支持HTML5元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;html5shiv.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="📜-参考文章"><a href="#📜-参考文章" class="headerlink" title="📜 参考文章"></a>📜 参考文章</h4><ul>
+<li><a href="http://www.runoob.com/html/html5-semantic-elements.html" target="_blank" rel="noopener">菜鸟教程 - HTML5 语义元素</a></li>
+<li><a href="http://www.daqianduan.com/6549.html" target="_blank" rel="noopener">HTML5-语义化——大前端</a></li>
+<li><a href="https://blog.csdn.net/weixin_40184257/article/details/84928877" target="_blank" rel="noopener">浅谈H5语义化标签的兼容处理</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/04/18/纯CSS绘制3D立方体/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1367,17 +1568,11 @@
       
         
           
-            <html><br>    <div style="font-size:0"><br>        <img src="/2018/12/22/CSS总结整理/css01.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css02.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css03.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css04.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css05.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css06.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css07.jpg"><br>        <img src="/2018/12/22/CSS总结整理/css08.jpg"><br>    </div><br>    <span class="caption" style="color: #999;
-    display: block;
-    font-size: 0.9em;
-    margin-top: 0.5em;
-    position: relative;
-    text-align: center;">思维导图缩略图</span><br></html>
-
-<hr>
-<ul>
-<li><a href="https://www.processon.com/mindmap/5bfba2ace4b018141e813442" target="_blank" rel="noopener">CSS知识梳理 思维导图 - 待补充</a></li>
-</ul>
+            <hr>
+<p>🐳 查看完整清晰版：<a href="http://111.231.79.243/blog/CSS3%20%E5%AD%A6%E4%B9%A0%E6%95%B4%E7%90%86.pdf" target="_blank" rel="noopener">CSS知识梳理思维导图.pdf</a></p>
+<p><br></p>
+<p>CSS知识梳理思维导图 缩略图：</p>
+<p><img src="/2018/12/22/CSS总结整理/CSS3 学习整理.png" alt="CSS知识梳理思维导图 缩略图"></p>
 
           
         
@@ -1716,318 +1911,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/09/12/CSS兼容问题总结整理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinling Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JinLing's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/12/CSS兼容问题总结整理/" itemprop="url">CSS兼容问题总结整理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-12T09:39:33+08:00">
-                2018-09-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/经验总结/" itemprop="url" rel="index">
-                    <span itemprop="name">经验总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>网页的浏览器兼容性，指网页在各种浏览器上的显示效果尽量保持一致的状态。</p>
-<h4 id="兼容性起因"><a href="#兼容性起因" class="headerlink" title="兼容性起因"></a>兼容性起因</h4><p>浏览器大战</p>
-<h4 id="兼容性的重要性"><a href="#兼容性的重要性" class="headerlink" title="兼容性的重要性"></a>兼容性的重要性</h4><ul>
-<li>网站做好了浏览器兼容，能够让网站在不同的浏览器下都正常显示</li>
-<li>浏览器兼容能够抓住更多的网站访客</li>
-<li>浏览器兼容能够给客户更好的体验</li>
-</ul>
-<h4 id="目前常见的兼容方案"><a href="#目前常见的兼容方案" class="headerlink" title="目前常见的兼容方案"></a>目前常见的兼容方案</h4><ol>
-<li><strong>IE条件注释法</strong></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if IE]&gt;</span><br><span class="line">	这段文字只在IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><strong>类内属性前缀法</strong></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>_</td>
-<td>_color:red;</td>
-<td>IE6</td>
-</tr>
-<tr>
-<td>*</td>
-<td>*color:green;</td>
-<td>IE6/7 </td>
-</tr>
-<tr>
-<td>\9</td>
-<td>color:yellow\9;</td>
-<td>IE6/IE7/IE8/IE9/IE10都生效</td>
-</tr>
-<tr>
-<td>\0</td>
-<td>color:blue\0;</td>
-<td>IE8/IE9/IE10都生效</td>
-</tr>
-<tr>
-<td>\9\0</td>
-<td>color:purple\9\0;</td>
-<td>只对IE9/IE10生效</td>
-</tr>
-</tbody>
-</table>
-<ol start="3">
-<li><strong>浏览器前缀法</strong></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>内核</th>
-<th>主要代表的浏览器</th>
-<th>前缀</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Trident</td>
-<td>IE浏览器</td>
-<td>-ms</td>
-</tr>
-<tr>
-<td>Gecko</td>
-<td>Firefox</td>
-<td>-moz</td>
-</tr>
-<tr>
-<td>Presto</td>
-<td>Opera</td>
-<td>-o</td>
-</tr>
-<tr>
-<td>Webkit</td>
-<td>Chrome和Safari</td>
-<td>-webkit</td>
-</tr>
-</tbody>
-</table>
-<ol start="4">
-<li><strong>通过meta标签来控制</strong></li>
-</ol>
-<p>国内浏览器多为双核浏览器（360浏览器等），即webkit+IE，兼容起来实在费神，我们可以使用定义meta标签强制浏览器使用某种内核打开页面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//若页面需默认用极速核，增加标签：</span><br><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt; </span><br><span class="line">//若页面需默认用ie兼容内核，增加标签：</span><br><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;ie-comp&quot;&gt; </span><br><span class="line">// 若页面需默认用ie标准内核，增加标签：</span><br><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;ie-stand&quot;&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="我在工作中遇到的部分兼容性问题"><a href="#我在工作中遇到的部分兼容性问题" class="headerlink" title="我在工作中遇到的部分兼容性问题"></a>我在工作中遇到的部分兼容性问题</h4><ol>
-<li><p><strong>浏览器默认margin和padding各有不同</strong></p>
-<ul>
-<li><p>reset.css重置全局样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   margin:0;</span><br><span class="line">   padding:0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><strong>Chrome中文界面下小于12px的文本会强制按照12px显示</strong></p>
-<ul>
-<li><p>可使用CSS属性webkit-text-size-adjust</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; webkit-text-size-adjust:none; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p><strong>漏写DTD声明在IE中会触发浏览器的<code>怪异模式</code>（FireFox中仍会按照标准模式来解析）</strong></p>
-<ul>
-<li>一定要加DTD声明</li>
-</ul>
-</li>
-<li><p><strong>IE和FireFox中相邻DIV上下margin会重合，重合时按照绝对值较大的margin进行展示</strong></p>
-<ul>
-<li>养成固定习惯，尽量只用margin-top或者margin-bottom中的一个</li>
-</ul>
-</li>
-<li><p><strong>透明度：</strong></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   opacity: 0.6 ; </span><br><span class="line">   filter: alpha(opacity=60)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>所有浏览器下，p标签中间加载块元素都会被分解成两个p元素</strong></p>
-<ul>
-<li>不要在p标签中间加块级元素</li>
-</ul>
-</li>
-<li><p><strong>a标签在访问后，各状态的样式会混乱掉</strong></p>
-<ul>
-<li>4各伪类的顺序按照：L-V-H-A</li>
-</ul>
-</li>
-<li><p><strong>渐变的兼容</strong></p>
-<ul>
-<li><p>使用filter滤镜（带透明度的渐变，在部分低版本浏览器上会失去透明度）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.gradient&#123; </span><br><span class="line">    width:300px; </span><br><span class="line">    height:150px; </span><br><span class="line">    filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=100,finishy=0) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#483F96,endcolorstr=#fff,gradientType=1);</span><br><span class="line">    -ms-filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=100,finishy=0) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#483F96,endcolorstr=#fff,gradientType=1);/*IE8*/ </span><br><span class="line">    background:red; /* 一些不支持背景渐变的浏览器 */ </span><br><span class="line">    background:-moz-linear-gradient(top, red, rgba(0, 0, 255, 0.5)); </span><br><span class="line">    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0.5)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="9">
-<li><p><strong>360浏览器极速模式和兼容模式下产生的差异</strong></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="10">
-<li><p><strong>a标签使用来绝对定位后，锚点会失效</strong></p>
-<ul>
-<li>锚点连接不要使用绝对定位</li>
-</ul>
-</li>
-</ol>
-<h4 id="乱入两条js的"><a href="#乱入两条js的" class="headerlink" title="乱入两条js的"></a>乱入两条js的</h4><ol>
-<li><p>IE下可以用获取常规属性的方法来获取自定义属性，也可以用getAttribute()；FireFox中只能使用getAttribute()获取自定义属性</p>
-<ul>
-<li>统一使用getAttribute();</li>
-</ul>
-</li>
-<li><p>IE下，event对象只有x/y属性；FireFox下，只有pageX/pageY属性</p>
-<ul>
-<li><p>使用条件注释语句</p>
-<pre><code>&lt;!--[if It IE 9]&gt;
-  &lt;script src=&quot;http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js &quot;&gt;&lt;/script&gt;
-&lt;![end if]--&gt;
-</code></pre></li>
-</ul>
-</li>
-</ol>
-<hr>
-
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ul>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7" target="_blank" rel="noopener">浏览器兼容性-维基百科</a></li>
-<li><a href="https://blog.csdn.net/freshlover/article/details/12132801" target="_blank" rel="noopener">史上最全的CSS hack方式一览</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2078,7 +1961,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2100,7 +1983,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
