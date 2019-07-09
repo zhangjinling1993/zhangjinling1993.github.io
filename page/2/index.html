@@ -269,6 +269,309 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/11/05/【阮一峰】React入门实例教程（学习笔记）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinling Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JinLing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/05/【阮一峰】React入门实例教程（学习笔记）/" itemprop="url">【阮一峰】React入门实例教程（学习笔记）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T22:01:39+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+
+<h4 id="一、JSX-语法"><a href="#一、JSX-语法" class="headerlink" title="一、JSX 语法"></a>一、JSX 语法</h4><ol>
+<li><p>支持Html+JavaScript混写。</p>
+</li>
+<li><p>允许直接在模板中插入JavaScript变量。如果这个变量是一个数组，则会展开这个数组的所有成员。</p>
+</li>
+<li><p>在模板中插入数组变量时，要明确key，react的key关乎到react的dom-diff算法。react中对于dom的操作是根据生成的data-reactid进行绑定的，添加key可以保证dom结构的完整性，而不会根据react自己对dom标记的key进行重新分配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let names = [&apos;Alice&apos;, &apos;Emily&apos;, &apos;Kate&apos;];</span><br><span class="line">    let keyid = 0;</span><br><span class="line"></span><br><span class="line">    ReactDOM.render(</span><br><span class="line">        &lt;div</span><br><span class="line">            &#123;</span><br><span class="line">                names.map((name) = &#123;</span><br><span class="line">                    return &lt;div key = &#123;keyid++&#125;Hello, &#123; name &#125; !&lt;/div</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/div,</span><br><span class="line">        document.getElementById(&apos;example&apos;)</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+
+<h4 id="二、组件"><a href="#二、组件" class="headerlink" title="二、组件"></a>二、组件</h4><ol>
+<li><p>React 版本 16 以前：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># React.createClass() 用于生成一个组件类</span><br><span class="line">let HelloMessage = React.createClass(&#123;</span><br><span class="line">    render: () = &#123;</span><br><span class="line">        return &lt;h1Hello &#123; this.props.name &#125;&lt;/h1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React 版本 16 以后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class HelloMessage extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;h1Hello &#123; this.props.name &#125; !&lt;/h1</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;HelloMessage name=&quot;Eva&quot;/,</span><br><span class="line">    document.getElementById(&quot;example&quot;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>以上两种的区别：<a href="https://www.cnblogs.com/wonyun/p/5930333.html" target="_blank" rel="noopener">https://www.cnblogs.com/wonyun/p/5930333.html</a></p>
+</li>
+<li><p>所有组件都要有自己的render方法，用于输出组件。</p>
+</li>
+<li><p>组件类的第一个字母必须大写，否则会报错。</p>
+</li>
+<li><p>组件类只能包含一个顶层标签。</p>
+</li>
+<li><p>组件的属性可以在组件类的this.props对象上获取，比如：this.props.name。</p>
+</li>
+<li><p>添加组件属性，class属性需要写成className，for属性需要写成htmlFor。这是因为class和for是 JavaScript 的保留字。</p>
+</li>
+</ol>
+<hr>
+
+<h4 id="三、this-props-children"><a href="#三、this-props-children" class="headerlink" title="三、this.props.children"></a>三、this.props.children</h4><ol>
+<li><p>this.props对象的属性与组件的属性一一对应，但是this.props.children除外</p>
+</li>
+<li><p>this.props.children表示组件的所有子节点</p>
+</li>
+<li><p>this.props.children的值有三种可能：</p>
+<ul>
+<li>undefind —— 没有子节点</li>
+<li>object —— 只有一个子节点</li>
+<li>array —— 有多个子节点</li>
+</ul>
+</li>
+<li><p>我们可以用 React.Children.map 来遍历子节点</p>
+</li>
+</ol>
+<hr>
+
+<h4 id="四、PropTypes-组件实例属性验证"><a href="#四、PropTypes-组件实例属性验证" class="headerlink" title="四、PropTypes 组件实例属性验证"></a>四、PropTypes 组件实例属性验证</h4><ol>
+<li><p>参考</p>
+<ul>
+<li>segmentfault：<a href="https://segmentfault.com/a/1190000016182458" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016182458</a></li>
+<li>菜鸟教程：<a href="http://www.runoob.com/react/react-props" target="_blank" rel="noopener">http://www.runoob.com/react/react-props</a>.</li>
+</ul>
+</li>
+<li><p>npm安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install prop-types --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>CDN引用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js&quot;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常用数据类型检测</p>
+<ul>
+<li>字符串类型PropTypes.string</li>
+<li>布尔类型PropTypes.bool</li>
+<li>函数类型PropTypes.func</li>
+<li>数组类型PropTypes.array</li>
+<li>数字类型PropTypes.number</li>
+<li>对象类型PropTypes.object</li>
+<li>元素PropTypes.element</li>
+<li>传入任何东西都可以PropTypes.node</li>
+<li>选择特定值PropTypes.oneOf([‘是’, ‘否’, “是否”])</li>
+<li>选择诸多类型中的一种（任意类型）PropTypes.oneOfType</li>
+</ul>
+</li>
+<li><p>实例：PropTypes静态类型校验</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class MyTitle extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return &lt;div&#123;this.props.title&#125;&lt;/div;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">MyTitle.propTypes = &#123;</span><br><span class="line">    title: PropTypes.string.isRequired,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let data = 123;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;MyTitle title=&#123;data&#125;/,</span><br><span class="line">    document.getElementById(&quot;example&quot;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// =&gt; Warning: Failed prop type: Invalid prop `title` of type `number` supplied to `MyTitle`, expected `string`.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例：设置组件属性默认值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class MyTitle extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return &lt;h1&#123;this.props.title&#125;&lt;/h1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">MyTitle.defaultProps = &#123;</span><br><span class="line">    title: &apos;defaultTitle&apos;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;MyTitle/,</span><br><span class="line">    document.getElementById(&quot;example&quot;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+
+<h4 id="五、ref-属性获取真实的DOM节点"><a href="#五、ref-属性获取真实的DOM节点" class="headerlink" title="五、ref 属性获取真实的DOM节点"></a>五、ref 属性获取真实的DOM节点</h4><ol>
+<li>由于this.refs.[refName]属性获取的是真实的DOM节点，所以必须等到虚拟DOM插入文档后才能使用这个属性</li>
+<li><p>下面实例中，要保证真实DOM发生在事件之后，才能读取到this.refs.[refName]属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component&#123;</span><br><span class="line">    handleClick = () = &#123;</span><br><span class="line">        this.refs.myTextInput.focus();</span><br><span class="line">    &#125;;</span><br><span class="line">    render = () = &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div</span><br><span class="line">                &lt;input type=&quot;text&quot; ref=&quot;myTextInput&quot;/</span><br><span class="line">                &lt;input type=&quot;button&quot; value=&quot;Focus the text input&quot; onClick=&#123;this.handleClick&#125;/</span><br><span class="line">            &lt;/div</span><br><span class="line">        )</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;MyComponent/,</span><br><span class="line">    document.getElementById(&apos;example&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+
+<h4 id="六、this-state"><a href="#六、this-state" class="headerlink" title="六、this.state"></a>六、this.state</h4><ol>
+<li><p>阮一峰教程中使用了getInitialState方法，该方法只能与CreateClass一起使用</p>
+</li>
+<li><p>使用React.Component时，需要搭配constructor</p>
+</li>
+<li><p>this.setState方法不能直接写在constructor中</p>
+</li>
+<li><p>只要组件存在constructor，就必须写super，否则this.props将是未定义</p>
+</li>
+<li><p>两者的具体区别请对照阮一峰教程和React官方文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class LikeButton extends React.Component&#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123; liked: false &#125;;</span><br><span class="line">        this.handleClick = this.handleClick.bind(this);</span><br><span class="line">    &#125;</span><br><span class="line">    handleClick()&#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            liked: !this.state.liked</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;;</span><br><span class="line">    render()&#123;</span><br><span class="line">        let text = this.state.liked ? &apos;like&apos; : &apos;have not liked&apos;;</span><br><span class="line">        return (</span><br><span class="line">            &lt;p onClick=&#123;this.handleClick&#125;</span><br><span class="line">                You &#123;text&#125; this. Click to toggle.</span><br><span class="line">            &lt;/p</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;LikeButton/,</span><br><span class="line">    document.getElementById(&apos;example&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+
+<h4 id="七、表单"><a href="#七、表单" class="headerlink" title="七、表单"></a>七、表单</h4><ol>
+<li><p>表单需要用户和组件互动，所以不能用this.props直接读取</p>
+</li>
+<li><p>textarea 元素、select元素、radio元素都属于这种情况</p>
+</li>
+<li><p>要定义一个 onChange 事件的回调函数，通过 event.target.value 读取用户输入的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Input extends React.Component&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;value: &quot;Hello!&quot;&#125;;</span><br><span class="line">        this.handleChange = this.handleChange.bind(this);</span><br><span class="line">    &#125;</span><br><span class="line">    handleChange(event)&#123;</span><br><span class="line">        this.setState(&#123; value: event.target.value &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        let value = this.state.value;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div</span><br><span class="line">                &lt;input type=&quot;text&quot; value=&#123; value &#125; onChange=&#123; this.handleChange &#125;/</span><br><span class="line">                &lt;p&#123; value &#125;&lt;/p</span><br><span class="line">            &lt;/div</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Input/,</span><br><span class="line">    document.getElementById(&quot;example&quot;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+
+<h4 id="八、组件的生命周期"><a href="#八、组件的生命周期" class="headerlink" title="八、组件的生命周期"></a>八、组件的生命周期</h4><ol>
+<li><p>三种状态</p>
+<ul>
+<li>Mounting：已插入真实DOM</li>
+<li>Updating：正在被重新渲染</li>
+<li>Unmounting：已移出真实DOM</li>
+</ul>
+</li>
+<li><p>五种处理函数</p>
+<ul>
+<li>componentWillMount()：在这个函数中，不可以调用setState来修改状态</li>
+<li>componentDidMount()：①.ajax可以再这里调用，返回数据setState后组件会重新渲染；②.可以通过this.refs来访问真实DOM</li>
+<li>componentWillUpdate(object nextProps, object nextState)</li>
+<li>componentDidUpdate(object prevProps, object prevState)</li>
+<li>componentWillUnmount()</li>
+</ul>
+</li>
+<li><p>两种特殊状态</p>
+<ul>
+<li>componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用，该函数只监听props的改变，this.setState不会触发这个函数</li>
+<li>shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用，这个函数只返回true或false，表示组件是否需要更新</li>
+</ul>
+<p><img src="/2018/11/05/【阮一峰】React入门实例教程（学习笔记）/img01.jpg" alt="转自https://www.cnblogs.com/qiaojie/p/6135180.html"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Hello extends React.Component&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;opacity: 1.0&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        this.timer = setInterval(function () &#123;</span><br><span class="line">            let opacity = this.state.opacity;</span><br><span class="line">            opacity -= .01;</span><br><span class="line">            if (opacity &lt; 0.1)&#123;</span><br><span class="line">                opacity = 1.0</span><br><span class="line">            &#125;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                opacity: opacity</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;.bind(this), 20)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div style=&#123;&#123; opacity: this.state.opacity &#125;&#125;</span><br><span class="line">                Hello &#123; this.props.name &#125;</span><br><span class="line">            &lt;/div</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Hello name=&quot;world&quot;/,</span><br><span class="line">    document.getElementById(&apos;example&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+
+</li>
+</ol>
+<h4 id="九、Ajax"><a href="#九、Ajax" class="headerlink" title="九、Ajax"></a>九、Ajax</h4><ol>
+<li>我们通常在componentDidMount周期中调用Ajax请求，成功后再用setState方法重新渲染数据</li>
+<li><p>阮一峰老师的案例中使用的isMouted()方法，在React的ES6语法中已经废弃</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class UserGist extends React.Component&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            username: &apos;&apos;,</span><br><span class="line">            lastGistUrl: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        this.serverReq = $.get(this.props.source, function (result) &#123;</span><br><span class="line">            let lastGist = result[1];</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                username: lastGist.owner.login,</span><br><span class="line">                lastGistUrl: lastGist.html_url</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;.bind(this))</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line">        this.serverReq.abort();</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div</span><br><span class="line">                &#123; this.state.username &#125;&apos;s last gist is &lt;a href=&#123; this.state.lastGistUrl &#125;here&lt;/a</span><br><span class="line">            &lt;/div</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;UserGist source=&quot;https://api.github.com/users/octocat/gists&quot;/,</span><br><span class="line">    document.getElementById(&apos;example&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="noopener">React入门实例教程 —— 阮一峰</a></li>
+<li><a href="https://segmentfault.com/a/1190000011197112" target="_blank" rel="noopener">React的生命周期到底是怎么一回事？</a></li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/09/12/CSS兼容问题总结整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1399,7 +1702,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1421,7 +1724,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

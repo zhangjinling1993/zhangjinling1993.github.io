@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangjinling1993.github.io/"/>
-  <updated>2019-04-22T02:05:52.545Z</updated>
+  <updated>2019-07-09T06:43:51.674Z</updated>
   <id>https://zhangjinling1993.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端防止用户重复提交的四种方法</title>
+    <link href="https://zhangjinling1993.github.io/2019/07/09/%E5%89%8D%E7%AB%AF%E9%98%B2%E6%AD%A2%E7%94%A8%E6%88%B7%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>https://zhangjinling1993.github.io/2019/07/09/前端防止用户重复提交的四种方法/</id>
+    <published>2019-07-09T06:29:00.000Z</published>
+    <updated>2019-07-09T06:43:51.674Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>H5 前端语义化标签，及其低版本浏览器兼容解决方案</title>
