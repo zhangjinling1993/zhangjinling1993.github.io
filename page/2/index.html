@@ -269,6 +269,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2019/01/30/1-VS-Code之常用配置文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinling Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JinLing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/30/1-VS-Code之常用配置文件/" itemprop="url">1.VS Code之常用配置文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-30T15:14:42+08:00">
+                2019-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h3 id="一、配置中文界面"><a href="#一、配置中文界面" class="headerlink" title="一、配置中文界面"></a>一、配置中文界面</h3><ol>
+<li><p>Ctrl + Shift + P</p>
+</li>
+<li><p>configure display language</p>
+</li>
+<li><p>修改文件：local.json</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;local&quot;:&quot;zh-CN&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启VS Code</p>
+</li>
+</ol>
+<h3 id="二、配置快捷键"><a href="#二、配置快捷键" class="headerlink" title="二、配置快捷键"></a>二、配置快捷键</h3><ol>
+<li>修改文件：keyblindings.json</li>
+</ol>
+<h3 id="三、配置debugger"><a href="#三、配置debugger" class="headerlink" title="三、配置debugger"></a>三、配置debugger</h3><ol>
+<li>修改文件：launch.json</li>
+</ol>
+<h3 id="四、工作空间配置"><a href="#四、工作空间配置" class="headerlink" title="四、工作空间配置"></a>四、工作空间配置</h3><p>在Visual Studio Code里面有两种配置的概念，User和Workspace 。它们分别代表了两种作用域的配置概念。</p>
+<ul>
+<li><strong>User</strong> 全局</li>
+<li><strong>Workspace</strong> 局部 （工作空间）</li>
+</ul>
+<p>配置时会生成相应的 settings.json 文件，User的配置文件存放在全局目录中，Workspace的配置文件存放在所在的工作空间</p>
+<p><img src="https://code.visualstudio.com/assets/docs/getstarted/settings/hero.png" alt="image"></p>
+<h3 id="五、配置JS文件声明注释"><a href="#五、配置JS文件声明注释" class="headerlink" title="五、配置JS文件声明注释"></a>五、配置JS文件声明注释</h3><ol>
+<li><p>首选项/用户代码片段</p>
+</li>
+<li><p>创建一个.code-snippets文件</p>
+</li>
+<li><p>添加自定义片段</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   &quot;JS description&quot;: &#123;</span><br><span class="line">	&quot;prefix&quot;: &quot;jsfile&quot;,</span><br><span class="line">	&quot;body&quot;: [</span><br><span class="line">		&quot;/**&quot;,</span><br><span class="line">		&quot;* @module $&#123;TM_FILENAME_BASE&#125;&quot;,</span><br><span class="line">		&quot;* @author: ZHANG Jinling&quot;,</span><br><span class="line">		&quot;* @since: $&#123;CURRENT_YEAR&#125;-$&#123;CURRENT_MONTH&#125;-$&#123;CURRENT_DATE&#125; $&#123;CURRENT_HOUR&#125;:$&#123;CURRENT_MINUTE&#125;:$&#123;CURRENT_SECOND&#125;&quot;,</span><br><span class="line">		&quot;*/&quot;,</span><br><span class="line">		&quot;&quot;,</span><br><span class="line">		&quot;&quot;</span><br><span class="line">	],</span><br><span class="line">	&quot;description&quot;: &quot;Insert description.&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其具体字段含义</p>
+<html><br> <div style="font-size:12px;line-height:20px"><br> <table cellpadding="0"><br>     <thead><br>     <tr><br>         <th width="10%">字段</th><br>         <th>说明</th><br>     </tr><br>     </thead><br>     <tbody><br>     <tr><br>         <td>prefix</td><br>         <td>前缀，即你在编辑器中输入的内容为前缀指定内容时，能够在编辑器建议中选择此片段。</td><br>     </tr><br>     <tr><br>         <td>body</td><br>         <td>具体文本内容，在选择此片段后，会将此数组根据<br>         <code>\n</code>进行组合输出到编辑器中。<br>         <br>其中有部分特定的常量，可以获取输入时的部分信息，如：<br>         <br><br>         ${CURRENT_YEAR}:当前年份，具体字段可以见<br>         <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Feditor%2Fuserdefinedsnippets" rel="nofollow noopener noreferrer">此处</a><br>         <br>说明：在写此文章时，部分1.20.0版本增加的常量并不在上面的文档中，具体字段为：<br>         <code>CURRENT_YEAR</code>：年（4位数）<br>         <code>CURRENT_YEAR_SHORT</code>：年（2位数）<br>         <code>CURRENT_MONTH</code>：月<br>         <code>CURRENT_DATE</code>：日<br>         <code>CURRENT_HOUR</code>：小时<br>         <code>CURRENT_MINUTE</code> ：分钟<br>         <code>CURRENT_SECOND</code>：秒<br>         </td><br>     </tr><br>     <tr><br>         <td>description</td><br>         <td>描述说明，在片段说明中会显示此字段的文本内容。</td><br>     </tr><br>     </tbody><br> </table><br> </div><br></html>
+
+</li>
+</ol>
+<h3 id="六、其他常用"><a href="#六、其他常用" class="headerlink" title="六、其他常用"></a>六、其他常用</h3><ol>
+<li>添加 git 配置 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;git.path&quot;: &quot;D:/Program Files/Git/bin&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangjinling1993.github.io/2018/12/22/CSS总结整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1826,7 +2009,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1848,7 +2031,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
